@@ -7,10 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'To do list';
-  tablica=[];
+  tabTask=[];
 
 
-  dodaj(task:string):void {
-this.tablica.push(task);
+  add(task:string):void {
+this.tabTask.push(task);
   }
+deleteTask(index:number){
+this.tabTask.splice(index,1);
+
+}
+
 }

@@ -1,8 +1,11 @@
 <h1>Welcome to {{title}}</h1>
 <input #inpucik>
-<button (click)="dodaj(inpucik.value)">ADD</button> 
+<button (click)="add(inpucik.value)">ADD</button> 
 <ul>
-<li *ngFor="let elemencik of tablica">{{elemencik}}</li>
+<li *ngFor="let elemencik of tabTask; let indeksik=index">{{elemencik}}
+
+  <button (click)="deleteTask(indeksik)">DELETE</button>
+</li>
 
 
 </ul>

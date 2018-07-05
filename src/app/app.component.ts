@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,13 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'To do list';
   tabTask=[];
+  @ViewChild('inpucik') inpucikhtml: ElementRef;
 
 
   add(task:string):void {
-this.tabTask.push(task);
+    this.tabTask.push(task);
+    this.inpucikhtml.nativeElement.value = '';
   }
-deleteTask(index:number){
-this.tabTask.splice(index,1);
+  deleteTask(index:number){
+    this.tabTask.splice(index,1);
 
 }
 

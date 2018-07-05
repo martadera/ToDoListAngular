@@ -1,5 +1,5 @@
 <h1>Welcome to {{title}}</h1>
-<input #inpucik>
+<input #inpucik (keydown.enter)="add(inpucik.value)">
 <button (click)="add(inpucik.value)">ADD</button> 
 <ul>
 <li *ngFor="let elemencik of tabTask; let indeksik=index">{{elemencik}}
